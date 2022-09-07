@@ -1,0 +1,273 @@
+body {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header {
+  border-bottom: 1px solid #2b338f;
+  padding-top: 15px;
+}
+
+header,
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  width: 40%;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: #2b338f solid 1px;
+}
+
+main .main_heading {
+  margin-bottom: 0px;
+  padding-bottom: 8px;
+  border-bottom: #2b338f 2px solid;
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  line-height: 42px;
+}
+
+main .imgAndLogo {
+  padding-top: 18px;
+  position: relative;
+  margin: 0, 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .imgAndLogo .ActiveLogo {
+  position: absolute;
+  transform: translate(120%, -62%);
+}
+
+main .imgAndLogo .imgAndInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .imgAndLogo .imgAndInfo img {
+  border: #2b338f 5px solid;
+  border-radius: 5px;
+}
+
+main .imgAndLogo .imgAndInfo h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400px;
+  line-height: 39px;
+  font-size: 26px;
+  margin-bottom: 0;
+}
+
+main .imgAndLogo .imgAndInfo h2 {
+  color: #2b338f;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0;
+}
+
+main .fullDetail {
+  padding: 20px 0 40px 0;
+  width: 60%;
+}
+
+main .fullDetail ul {
+  height: 216px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+main .fullDetail ul li {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 26px;
+  width: 100%;
+}
+
+main .fullDetail ul li label,
+main .fullDetail ul li span {
+  display: inline-block;
+}
+
+main .fullDetail ul li label {
+  margin-left: 30%;
+  width: 20%;
+}
+main .fullDetail ul li span {
+  width: 47%;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  border-bottom: #2b338f 1px solid;
+}
+
+section p {
+  width: 25%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #2b338f;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 26px;
+  color: #2b338f;
+  letter-spacing: 0.395em;
+}
+
+main .mobile-logo {
+  display: none;
+}
+
+footer p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.395em;
+}
+
+footer span {
+  height: 10px;
+  width: 1px;
+  background-color: #2b338f;
+  margin-right: 10px;
+}
+
+/* .vector {
+  width: 100%;
+  position: fixed;
+  right: auto;
+} */
+
+.vector {
+  background-image: url("./Assests/img/Frame_desk.png");
+  width: 100%;
+  position: fixed;
+  right: auto;
+  height: 100%;
+}
+
+.vector_mobile1 {
+  background-image: url("./Assests/img/Frame.png");
+  width: 100%;
+  position: fixed;
+  right: auto;
+  height: 100%;
+}
+.vector_mobile2 {
+  background-image: url("./Assests/img/Frame\ 53.png");
+  width: 100%;
+  position: fixed;
+  right: auto;
+  height: 100%;
+}
+
+@media (max-width: 650px) {
+  header nav {
+    display: none;
+  }
+
+  main .imgAndLogo .ActiveLogo {
+    display: none;
+  }
+
+  main .imgAndLogo {
+    flex-direction: column;
+  }
+
+  main .mobile-logo {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: block;
+  }
+
+  main .fullDetail ul li {
+    height: 50px;
+  }
+
+  main .fullDetail ul li label,
+  main .fullDetail ul li span {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 0;
+    width: auto;
+  }
+
+  main .fullDetail ul {
+    height: 400px;
+  }
+
+  section p {
+    width: 80%;
+    text-align: center;
+  }
+
+  footer span {
+    display: none;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer h4,
+  footer p {
+    text-align: center;
+  }
+
+  .vector {
+    display: none;
+  }
+}
