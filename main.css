@@ -96,7 +96,7 @@ main .fullDetail {
 }
 
 main .fullDetail ul {
-  height: 216px;
+  height: 325px;
   width: 100%;
   list-style: none;
   padding: 0;
@@ -121,11 +121,11 @@ main .fullDetail ul li span {
 }
 
 main .fullDetail ul li label {
-  margin-left: 30%;
+  margin-left: 32%;
   width: 20%;
 }
 main .fullDetail ul li span {
-  width: 47%;
+  width: 32%;
 }
 
 section {
