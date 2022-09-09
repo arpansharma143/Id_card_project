@@ -5,7 +5,12 @@ body {
 
 header {
   border-bottom: 1px solid #2b338f;
-  padding-top: 15px;
+  height: 128px;
+}
+
+header .logo {
+  height: 72px;
+  margin-top: 15px;
 }
 
 header,
@@ -29,6 +34,10 @@ nav ul {
   list-style: none;
 }
 
+header nav ul li a {
+  text-decoration: none;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -39,7 +48,7 @@ main {
 
 main .main_heading {
   margin-bottom: 0px;
-  padding-bottom: 8px;
+
   border-bottom: #2b338f 2px solid;
   font-size: 28px;
   font-family: "Poppins", sans-serif;
@@ -96,7 +105,7 @@ main .fullDetail {
 }
 
 main .fullDetail ul {
-  height: 325px;
+  height: 208px;
   width: 100%;
   list-style: none;
   padding: 0;
@@ -192,10 +201,12 @@ footer span {
   position: fixed;
   right: auto;
   height: 100%;
+  z-index: -10;
 }
 
 .vector_mobile1 {
   background-image: url("./Assests/img/Frame.png");
+  z-index: -10;
   width: 100%;
   position: fixed;
   right: auto;
@@ -203,15 +214,145 @@ footer span {
 }
 .vector_mobile2 {
   background-image: url("./Assests/img/Frame\ 53.png");
+  z-index: -10;
   width: 100%;
   position: fixed;
   right: auto;
   height: 100%;
 }
 
-@media (max-width: 650px) {
+/* togglebar css////////////////////////// */
+
+header .togglebar {
+  display: none;
+}
+
+.togglebar label {
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  cursor: pointer;
+}
+
+.togglebar label span {
+  background: black;
+  border-radius: 10px;
+  height: 7px;
+  margin: 7px 0;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.togglebar span:nth-of-type(1) {
+  width: 50%;
+}
+
+.togglebar span:nth-of-type(2) {
+  width: 100%;
+}
+
+.togglebar span:nth-of-type(3) {
+  width: 75%;
+}
+
+.togglebar input[type="checkbox"] {
+  display: none;
+}
+
+.togglebar input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(8px, 0px);
+}
+
+.togglebar input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-45deg);
+}
+
+.togglebar input[type="checkbox"]:checked ~ span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(30px, -11px) rotatez(45deg);
+}
+
+/* end of toggle css */
+
+.mobileNav {
+  display: none;
+}
+
+/* media screen for 1250 ////////////////////////////////// */
+
+@media (max-width: 1250px) {
+  header nav ul {
+    width: 60%;
+  }
+}
+
+/* media screen for 850 ////////////////////////////////// */
+
+@media (max-width: 850px) {
+  .mobileNav {
+    background-color: #e5e5e5;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 40vw;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .openMobileNav {
+    display: flex;
+  }
+  /* .closeMobileNav {
+    display: none;
+  } */
+
+  .mobileNav nav {
+    height: 80vh;
+  }
+  .mobileNav nav ul {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: ; */
+    align-items: center;
+  }
+  nav ul li a {
+    text-decoration: none;
+  }
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header .toggle_main {
+    width: 70px;
+    height: 63px;
+    margin-right: 19px;
+  }
+
+  header .togglebar {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    height: 63px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   header nav {
     display: none;
+  }
+
+  header .logo {
+    width: 250px;
+    margin-left: 25px;
   }
 
   main .imgAndLogo .ActiveLogo {
@@ -235,6 +376,9 @@ footer span {
     height: 50px;
   }
 
+  main .fullDetail ul {
+    height: 400px;
+  }
   main .fullDetail ul li label,
   main .fullDetail ul li span {
     display: flex;
@@ -244,8 +388,83 @@ footer span {
     width: auto;
   }
 
+  section p {
+    width: 80%;
+    text-align: center;
+  }
+
+  footer span {
+    display: none;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer h4,
+  footer p {
+    text-align: center;
+  }
+
+  .vector {
+    display: none;
+  }
+}
+
+/* media screen for 650 ////////////////////////////////// */
+
+@media (max-width: 650px) {
+  header nav {
+    display: none;
+  }
+
+  main .imgAndLogo .ActiveLogo {
+    display: none;
+  }
+
+  main .imgAndLogo {
+    flex-direction: column;
+  }
+
+  main .mobile-logo {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+  }
+
   main .fullDetail ul {
+    display: block;
     height: 400px;
+  }
+
+  main .fullDetail ul li {
+    display: block;
+    height: 70px;
+  }
+
+  main .fullDetail ul li:nth-child(5) {
+    height: 92px;
+  }
+
+  main .fullDetail ul li span {
+    height: 63px;
+  }
+
+  main .fullDetail ul li label,
+  main .fullDetail ul li span {
+    display: block;
+    /* display: flex; */
+    /* flex-direction: column;
+    text-align: center; */
+    /* margin-left: 0; */
+    /* width: auto; */
+  }
+
+  main .fullDetail ul li span {
+    word-wrap: break-word;
   }
 
   section p {
